@@ -24,6 +24,7 @@ body{
     overflow: hidden;
 }
 .nav-bar{
+    justify-content: space-between;
     align-items: center;
     display: flex;
     width: 100%;
@@ -38,7 +39,7 @@ body{
     font-weight: 500;
 }
 .nav-bar .logo{
-    width: 100%;
+    width: auto;
     height: 100%;
     align-items: center;
     z-index: 1;
@@ -68,12 +69,13 @@ body{
     font-size: 1.5rem;
     transition: 0.5s;
 }
+
 .nav-bar .bar li:hover{
-    transition: 0.5s;
     cursor: pointer;
     background-color: var(--Color4);
     color: var(--Color2);
 }
+
 
 .nav-bar .switch{
     display: flex;
@@ -172,6 +174,7 @@ body{
 }
 
 .container.main .container.content .about .right .ability .bar{
+    padding-left: 1rem;
     width: 0;
     height: 40px;
     transition: 1.5s;
