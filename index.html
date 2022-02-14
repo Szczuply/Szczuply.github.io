@@ -5,20 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
-    <div class="container">
-        <h2>Moga jechać dzisio na imprezke?</h2>
-        <ul>
-            <li>Z kim? Kolegami</li>
-            <li>Gdzie? Do Warszowic.</li>
-            <li>Po co? Potańczyć.</li>
-            <li>Kiedy wróce? Późno, jak oni pojadą.</li>
-            <li>Jaki wróce? Trzeźwy i cały.</li>
-            <li>Masz się bać? Nie, bo to wieś party.</li>
-        </ul>
+    <div class="nav-bar">
+        <div class="logo"> <img src="images/logo.png" alt="">Szczuply</div>
+        <div class="bar">
+                <li>Home</li>
+                <li>About</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+                <li>Socials</li>
+        </div>
+    <div class="switch" id="darkModeSwitch" onclick="DarkModeToggle()">Dark Mode Up Here -><img src="images/light-bulb.png" alt=""></div>
     </div>
+    <div class="container main">
+        <div class="container header">
+            <img src="images/starterbackground.png" alt="">
+            <div class="starter-message">
+                Uszanowanko!
+            </div>
+        </div>
+        <div class="container content">
+            <div class="about">
+                <div class="left">
+                    Nazywam się Patryk i jestem uczącym się Front-End Developerem. Wystartowałem z HTML'em, CSS'em i JavaScript'em. Do końca tego roku mam nadzieje na osiągnięcie poziomu React'a i BootStrap'a
+                </div>
+                <div class="right">
+                    <button id="abilitiesButton">Zobacz Co Potrafię</button>
+                    <div class="ability" id="html">
+                       <div class="bar"></div> HTML
+                    </div>
+                    <div class="ability" id="css">
+                        <div class="bar"></div> CSS
+
+                    </div>
+                    <div class="ability" id="js">
+                        <div class="bar"></div> JavaScript
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio">
+                <div class="project"><a href="subsites/Onet pogoda/index.html"><img src="images/weatherapp.jpg" alt=""></a></div>
+                <div class="project"><a href="subsites/Zygor/index.html"><img src="images/zygor.jpg" alt=""></a></div>
+                <div class="project"><a href="subsites/OpenCloseTab/index.html"><img src="images/opening.jpg" alt=""></a></div>
+                <div class="project"><a href="subsites/daj liczbe/index.html"><img src="images/kopa.jpg" alt=""></a></div>
+            </div>
+            <div class="contact">
+                E-mail: Patrox2005151@gmail.com
+                <div class="form">
+                    <form action="mailto:Patrox2005151@gmail.com">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Surname">
+                        <input type="mail" placeholder="Mail Address">
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+   <script src="scripts/main.js"></script> 
 </body>
 </html>
