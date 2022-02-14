@@ -18,9 +18,11 @@
 .dark-mode{
     --Color1:  rgb(240, 240, 240);
     --Color2: rgb(8, 8, 8);
-    --Color4: rgb(98, 224, 125);
+    --Color4: rgb(98, 224, 125);   
 }
-
+body{
+    overflow: hidden;
+}
 .nav-bar{
     align-items: center;
     display: flex;
