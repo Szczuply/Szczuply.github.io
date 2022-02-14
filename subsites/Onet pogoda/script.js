@@ -1,88 +1,70 @@
-const wrapper = document.querySelector('.wrapper'),
-inputPart = wrapper.querySelector('.input-part'),
-infoTxt = inputPart.querySelector('.info-txt'),
-inputField = inputPart.querySelector('input'),
-locationBtn = inputPart.querySelector('button'),
-wIcon = wrapper.querySelector('.weather-part img'),
-arrowBack = wrapper.querySelector('header i');
+let apiFetchAddress;
+document
+  .querySelector("#buttonLocation")
+  .addEventListener("click", () => {
+    const ipApi = `https://api.ip2loc.com/r6HFO0fYVPl1D8zPRBCCPLpfYvhZcCT6/detect`;
+    fetch(ipApi)
+      .then((respone) => respone.json())
+      .then((result) => fetchLocation(result));
+  });
 
-let api;
+document.querySelector(".arrow").addEventListener("click", () => {
+  document.querySelector(".main-block").classList.remove("active");
+});
 
-inputField.addEventListener("keyup", e => {
-    if(e.key == "Enter" && inputField.value != ""){
-        requestApi(inputField.value)
-    }
-})
+document.querySelector("#buttonCity").addEventListener("click", () => {
+  cityName = document.querySelector("#inputCity").value;
+  apiFetchAddress = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=d693762ef95de62b9b5ba8261be85463&lang=pl`;
+  fetchData();
+});
 
-locationBtn.addEventListener('click', () => {
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(onSuccess, onError)
-    } else {
-        alert("Your browser not support geolocation api")
-    }
-})
-
-function onSuccess(position) {
-    const {latitude, longitude} = position.coords;
-    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=d064860d7ccf6a67002d58873a480072`;
-    fetchData();
+function fetchLocation(result) {
+  longitude = result.location.longitude;
+  latitude = result.location.latitude;
+  apiFetchAddress = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=d693762ef95de62b9b5ba8261be85463&lang=pl`;
+  fetchData();
 }
-
-function onError(error) {
-    console.log(error)
-    infoTxt.innerText = error.message
-    infoTxt.classList.add('error')
-}
-
-
-function requestApi(city) {
-    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=d064860d7ccf6a67002d58873a480072`;
-    fetchData();
-}
-
 function fetchData() {
-    infoTxt.innerText = "Getting weather Details..."
-    infoTxt.classList.add('pending')
-    fetch(api).then(response => response.json()).then(result => weatherDetails(result));
+  document.querySelector(".main-block").classList.add("active");
+  fetch(apiFetchAddress)
+    .then((response) => response.json())
+    .then((result) => weatherDetails(result));
 }
 
-function weatherDetails(info){
-    infoTxt.classList.replace("pending", "error")
-    if(info.cod == "404"){
-        infoTxt.innerText = `${inputField.value} isn't a valid city name`;
-    } else {
-        const city = info.name;
-        const country = info.sys.country;
-        const {description, id} = info.weather[0];
-        const {feels_like, humidity, temp} = info.main
+function weatherDetails(info) {
+  const weatherIcon = document.querySelector("#icon");
+  const city = info.name;
+  const { description, id } = info.weather[0];
+  const { humidity, temp, feels_like, pressure } = info.main;
 
-        if(id == 800){
-            wIcon.src = 'icons/clear.svg'
-        } else if (id >= 200 && id <= 232) {
-            wIcon.src = 'icons/storm.svg'
-        } else if (id >= 600 && id <= 622) {
-            wIcon.src = 'icons/snow.svg'
-        } else if (id >= 701 && id <= 781) {
-            wIcon.src = 'icons/haze.svg'
-        } else if (id >= 801 && id <= 804) {
-            wIcon.src = 'icons/cloud.svg'
-        } else if ((id >= 300 && id <= 321) || (id >= 500 && id <=531)) {
-            wIcon.src = 'icons/rain.svg'
-        }
+  if (id == 800) {
+    weatherIcon.src = "icons/clear.svg";
+  } else if (id >= 200 && id <= 232) {
+    weatherIcon.src = "icons/storm.svg";
+  } else if (id >= 600 && id <= 622) {
+    weatherIcon.src = "icons/snow.svg";
+  } else if (id >= 701 && id <= 781) {
+    weatherIcon.src = "icons/haze.svg";
+  } else if (id >= 801 && id <= 804) {
+    weatherIcon.src = "icons/cloud.svg";
+  } else if ((id >= 300 && id <= 321) || (id >= 500 && id <= 531)) {
+    weatherIcon.src = "icons/rain.svg";
+  }
 
-        wrapper.querySelector(".temp .numb").innerText = Math.floor(temp);
-        wrapper.querySelector(".weather").innerText = description;
-        wrapper.querySelector(".location span").innerText = `${city}, ${country}`;
-        wrapper.querySelector(".temp .numb-2").innerText = Math.floor(feels_like);
-        wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
-
-
-        infoTxt.classList.remove("pending", "error")
-        wrapper.classList.add("active")
-        console.log(info)
-    }
+  document.querySelector("#cityName").innerHTML = `🏠  ${city}`;
+  document.querySelector("#weatherDescription").innerHTML = `💩${description}`;
+  document.querySelector("#humidity").innerHTML = `Wilgodność: ${humidity}%`;
+  document.querySelector("#temperature").innerHTML = `🌡${parseInt(temp)} ℃`;
+  document.querySelector("#feelsLike").innerHTML = `Odczuwalna: <br /> ${feels_like}℃`;
+  document.querySelector("#pressure").innerHTML = ` Ciśnienie: <br /> ${pressure} hPa`;
 }
+console.log("I have to put this code here because I want GitHub to attribute to this repository that it is mostly written in JavaScript. I don't know what you have to do with your life to read this further, I made this simple weather forecast between two e-lessons, please don't pay attention to what is written here. If you haven't finished reading it yet, have a nice day and best regards.Hear you next time, at least Until you read my scribbles again. Patric")
 
-arrowBack.addEventListener('click', () => {
-    wrapper.classList.remove("active")
-})
+
+console.log(`
+▀▀▀▀█▀▀▀▀
+─▄▀█▀▀█──────▄
+█▄▄█▄▄██████▀
+▀▀█▀▀▀█▀▀
+─▀▀▀▀▀▀▀
+`)
