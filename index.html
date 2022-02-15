@@ -1,81 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
     <button id="nav-barActivator">
-        <div class="smallbar"></div>
-        <div class="smallbar"></div>
-        <div class="smallbar"></div>
+      <div class="smallbar"></div>
+      <div class="smallbar"></div>
+      <div class="smallbar"></div>
     </button>
     <div class="nav-bar">
-        <div class="logo"> <img src="images/logo.png" alt="">Szczuply</div>
-        <div class="bar">
-                <li id="homeButton">Home</li>
-                <li id="aboutButton">About</li>
-                <li id="portfolioButton" >Portfolio</li>
-                <li id="contactButton">Contact & Socials</li>
-                
-        </div>
-    <div class="switch" id="darkModeSwitch" onclick="DarkModeToggle()">Dark Mode Up Here -><img src="images/light-bulb.png" alt=""></div>
+      <div class="logo"><img src="images/logo.png" alt="" />Szczuply</div>
+      <div class="bar">
+        <li id="homeButton">Home</li>
+        <li id="aboutButton">About</li>
+        <li id="portfolioButton">Portfolio</li>
+        <li id="contactButton">Contact & Socials</li>
+      </div>
+      <div class="switch" id="darkModeSwitch" onclick="DarkModeToggle()">
+        Dark Mode Up Here -><img src="images/light-bulb.png" alt="" />
+      </div>
     </div>
     <div class="container main">
-        <div class="container header">
-            <img src="images/starterbackground.png" alt="">
-            <div class="starter-message">
-                Uszanowanko!
+      <div class="container header">
+        <img src="images/starterbackground.png" alt="" />
+        <div class="starter-message">Uszanowanko!</div>
+      </div>
+      <div class="container content">
+        <div class="about">
+          <div class="left">
+            Nazywam się Patryk i jestem uczącym się Front-End Developerem.
+            Wystartowałem z HTML'em, CSS'em i JavaScript'em. Do końca tego roku
+            mam nadzieje na osiągnięcie poziomu React'a i BootStrap'a
+          </div>
+          <div class="right">
+            <button id="abilitiesButton">Zobacz Co Potrafię</button>
+            <div class="ability" id="html">
+              <div class="bar"></div>
+              HTML
             </div>
+            <div class="ability" id="css">
+              <div class="bar"></div>
+              CSS
+            </div>
+            <div class="ability" id="js">
+              <div class="bar"></div>
+              JavaScript
+            </div>
+          </div>
         </div>
-        <div class="container content">
-            <div class="about">
-                <div class="left">
-                    Nazywam się Patryk i jestem uczącym się Front-End Developerem. Wystartowałem z HTML'em, CSS'em i JavaScript'em. Do końca tego roku mam nadzieje na osiągnięcie poziomu React'a i BootStrap'a
-                </div>
-                <div class="right">
-                    <button id="abilitiesButton">Zobacz Co Potrafię</button>
-                    <div class="ability" id="html">
-                       <div class="bar"></div> HTML
-                    </div>
-                    <div class="ability" id="css">
-                        <div class="bar"></div> CSS
-
-                    </div>
-                    <div class="ability" id="js">
-                        <div class="bar"></div> JavaScript
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio">
-                <div class="project"><a href="subsites/Onet pogoda/index.html"><img src="images/weatherapp.jpg" alt=""></a></div>
-                <div class="project"><a href="subsites/Zygor/index.html"><img src="images/zygor.jpg" alt=""></a></div>
-                <div class="project"><a href="subsites/OpenCloseTab/index.html"><img src="images/opening.jpg" alt=""></a></div>
-                <div class="project"><a href="subsites/daj liczbe/index.html"><img src="images/kopa.jpg" alt=""></a></div>
-            </div>
-            <div class="contact">
-                <div class="socials">
-                    <li id="e-mail">Patrox2005151@gmail.com</li>
-                    <li id="discordName">Discord: Szczuply#3597</li>
-                    <li><a href="https://www.instagram.com/_chinolek_/">Instagram: _chinolek_</a></li>
-                    <li><a href="https://github.com/szczuply">Github: Szczuply</a></li>
-                </div>
-                <div class="form">
-                    <form action="mailto:Patrox2005151@gmail.com">
-                        <input type="text" placeholder="Name" required>
-                        <input type="mail" placeholder="Mail Address" required>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-
-                </div>
-            </div>
+        <div class="portfolio">
+          <div class="project">
+            <a href="subsites/Onet pogoda/index.html"
+              ><img src="images/weatherapp.jpg" alt=""
+            /></a>
+          </div>
+          <div class="project">
+            <a href="subsites/Zygor/index.html"
+              ><img src="images/zygor.jpg" alt=""
+            /></a>
+          </div>
+          <div class="project">
+            <a href="subsites/OpenCloseTab/index.html"
+              ><img src="images/opening.jpg" alt=""
+            /></a>
+          </div>
+          <div class="project">
+            <a href="subsites/daj liczbe/index.html"
+              ><img src="images/kopa.jpg" alt=""
+            /></a>
+          </div>
         </div>
+        <div class="contact">
+          <div class="socials">
+            <li id="e-mail">Patrox2005151@gmail.com</li>
+            <li id="discordName">Discord: Szczuply#3597</li>
+            <li>
+              <a href="https://www.instagram.com/_chinolek_/"
+                >Instagram: _chinolek_</a
+              >
+            </li>
+            <li><a href="https://github.com/szczuply">Github: Szczuply</a></li>
+          </div>
+          <div class="form">
+            <form action="mailto:Patrox2005151@gmail.com">
+              <input type="text" placeholder="Name" required />
+              <input type="mail" placeholder="Mail Address" required />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
-   <script src="scripts/main.js"></script> 
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

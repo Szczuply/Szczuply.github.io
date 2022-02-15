@@ -23,8 +23,8 @@ body {
   overflow: hidden;
 }
 
-#nav-barActivator{
-    display: none;
+#nav-barActivator {
+  display: none;
 }
 .nav-bar {
   justify-content: space-between;
@@ -88,7 +88,7 @@ body {
 }
 
 .nav-bar .switch img {
-    margin-left: 1rem;
+  margin-left: 1rem;
   height: 50px;
 }
 
@@ -315,115 +315,104 @@ textarea:is(:active, :focus) {
   color: var(--Color2);
 }
 
-@media all and (max-width:1200px) {
+@media all and (max-width: 1200px) {
+  #nav-barActivator {
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    z-index: 10;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    display: flex;
+    border-radius: 50%;
+    flex-direction: column;
+  }
+  .smallbar {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+  }
 
+  .nav-bar {
+    opacity: 0;
+  }
+  .nav-bar.open {
+    padding: 1rem 0;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    opacity: 80%;
+    transition: 1s;
+  }
 
-    #nav-barActivator{
-        justify-content: center;
-        align-items: center;
-        gap: 0.2rem;
-        z-index: 10;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        width: 50px;
-        height: 50px;
-        background-color: rebeccapurple;
-        display: flex;
-        border-radius: 50% ;
-        flex-direction: column;
-    }
-    .smallbar{
-        position: relative;
-        width: 30px;
-        height: 3px;
-        background-color: white;
-        border-radius: 3px;
-    }
+  .nav-bar .logo {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: auto;
+    height: auto;
+  }
 
-    .nav-bar{
-      opacity: 0;
-    }
-    .nav-bar.open{
-        padding: 1rem 0;
-        position: absolute;
-        flex-direction: column;
-        width: 100%;
-        height: 50vh;
-        opacity: 80%;
-        transition: 1s;
-    }
+  .nav-bar.open .bar {
+    position: relative;
+    height: 80%;
+    flex-direction: column;
+  }
 
-    .nav-bar .logo{
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        width: auto;
-        height: auto;
-    }
+  .container.main {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-    .nav-bar.open .bar{
-        position: relative;
-        height: 80%;
-        flex-direction: column;
-    }
+  .container.main .container.header img {
+    object-fit: scale-down;
+  }
 
-    .container.main{
-        overflow-X: hidden;
-        width: 100%;
-    }
+  .container.main .container.header .starter-message {
+    font-size: 2.5rem;
+  }
 
+  .container.main .container.content .about {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
+  .container.main .container.content .about .left {
+    padding: 1rem;
+    width: 100%;
+  }
 
-    .container.main .container.header img{
-        object-fit: cover;
-    }
+  .container.main .container.content .about .right .ability {
+    width: 250px;
+  }
 
-    .container.main .container.header .starter-message{
-        font-size: 2.5rem;
-    }
+  .container.main .container.content .portfolio {
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 
-    .container.main .container.content{
-        
-    }
+  .container.main .container.content .contact {
+    padding: 1rem;
+    flex-direction: column;
+  }
 
+  .container.main .container.content .about .right #html.active .bar {
+    width: 200px;
+  }
 
-    .container.main .container.content .about{
-        padding: 1rem;
-        flex-direction: column;
-    }
+  .container.main .container.content .about .right #css.active .bar {
+    width: 135px;
+  }
 
-    .container.main .container.content .about .left{
-        padding: 1rem;
-        width: 100%;
-    }
-
-    .container.main .container.content .about .right .ability{
-        width: 250px;
-    }
-
-    .container.main .container.content .portfolio{
-        padding: 2rem;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
-    }
-
-    .container.main .container.content .contact{
-        padding: 1rem;
-        flex-direction: column;
-    }
-
-
-
-    .container.main .container.content .about .right #html.active .bar{
-        width: 200px;
-    }
-
-    .container.main .container.content .about .right #css.active .bar{
-        width: 135px;
-    }
-
-    .container.main .container.content .about .right #hjs.active .bar{
-        width: 100px;
-    }
+  .container.main .container.content .about .right #hjs.active .bar {
+    width: 100px;
+  }
 }
