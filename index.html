@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <button id="nav-barActivator">
+        <div class="smallbar"></div>
+        <div class="smallbar"></div>
+        <div class="smallbar"></div>
+    </button>
     <div class="nav-bar">
         <div class="logo"> <img src="images/logo.png" alt="">Szczuply</div>
         <div class="bar">
-                <li>Home</li>
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
-                <li>Socials</li>
+                <li id="homeButton">Home</li>
+                <li id="aboutButton">About</li>
+                <li id="portfolioButton" >Portfolio</li>
+                <li id="contactButton">Contact & Socials</li>
+                
         </div>
     <div class="switch" id="darkModeSwitch" onclick="DarkModeToggle()">Dark Mode Up Here -><img src="images/light-bulb.png" alt=""></div>
     </div>
@@ -52,26 +57,24 @@
                 <div class="project"><a href="subsites/daj liczbe/index.html"><img src="images/kopa.jpg" alt=""></a></div>
             </div>
             <div class="contact">
-                E-mail: Patrox2005151@gmail.com
+                <div class="socials">
+                    <li id="e-mail">Patrox2005151@gmail.com</li>
+                    <li id="discordName">Discord: Szczuply#3597</li>
+                    <li><a href="https://www.instagram.com/_chinolek_/">Instagram: _chinolek_</a></li>
+                    <li><a href="https://github.com/szczuply">Github: Szczuply</a></li>
+                </div>
                 <div class="form">
                     <form action="mailto:Patrox2005151@gmail.com">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Surname">
-                        <input type="mail" placeholder="Mail Address">
-                        <input type="submit" value="Send">
+                        <input type="text" placeholder="Name" required>
+                        <input type="mail" placeholder="Mail Address" required>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send</button>
                     </form>
+
                 </div>
             </div>
-
-
         </div>
-
-
-
     </div>
-
-
-
 
    <script src="scripts/main.js"></script> 
 </body>
