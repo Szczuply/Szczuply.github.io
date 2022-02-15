@@ -412,7 +412,7 @@ textarea:is(:active, :focus) {
     width: 125px;
   }
 
-  .container.main .container.content .about .right #hjs.active .bar {
+  .container.main .container.content .about .right #js.active .bar {
     width: 50px;
   }
 }
