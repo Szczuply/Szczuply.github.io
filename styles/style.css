@@ -185,16 +185,16 @@ body {
 }
 
 .container.main .container.content .about .right #html.active .bar {
-  width: 400px;
+  width: 350px;
   background-color: rgb(239, 95, 42);
 }
 
 .container.main .container.content .about .right #css.active .bar {
-  width: 270px;
+  width: 250px;
   background-color: rgb(40, 92, 237);
 }
 .container.main .container.content .about .right #js.active .bar {
-  width: 200px;
+  width: 100px;
   background-color: rgb(247, 223, 29);
 }
 
@@ -405,14 +405,14 @@ textarea:is(:active, :focus) {
   }
 
   .container.main .container.content .about .right #html.active .bar {
-    width: 200px;
+    width: 275px;
   }
 
   .container.main .container.content .about .right #css.active .bar {
-    width: 135px;
+    width: 125px;
   }
 
   .container.main .container.content .about .right #hjs.active .bar {
-    width: 100px;
+    width: 50px;
   }
 }
